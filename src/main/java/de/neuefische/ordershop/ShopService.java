@@ -34,4 +34,8 @@ public class ShopService {
     public void addOrder(Order order) {
         orderRepo.addOrder(order);
     }
+
+    public Product getProductByName(String searchValue) {
+        return productRepo.getProductByName(searchValue);
+    }
 }

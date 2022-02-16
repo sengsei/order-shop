@@ -16,4 +16,13 @@ public class ProductRepo {
     public void addProduct(Product product) {
         products.add(product);
     }
+
+    public Product getProductByName(String searchValue) {
+        for (Product product : products){
+            if (product.getName().equals(searchValue)){
+                return product;
+            }
+        }
+        return null;
+    }
 }

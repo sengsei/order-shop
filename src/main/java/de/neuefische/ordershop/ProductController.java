@@ -22,4 +22,9 @@ public class ProductController {
     public void addProduct(@RequestBody Product product){
         shopService.addProduct(product);
     }
+
+    @GetMapping("/search")
+    public Product search(@RequestParam String searchValue){
+        return shopService.getProductByName(searchValue);
+    }
 }
