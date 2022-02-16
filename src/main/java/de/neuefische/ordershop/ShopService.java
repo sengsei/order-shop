@@ -3,6 +3,7 @@ package de.neuefische.ordershop;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ShopService {
@@ -35,7 +36,7 @@ public class ShopService {
         orderRepo.addOrder(order);
     }
 
-    public Product getProductByName(String searchValue) {
+    public Optional<Product> getProductByName(String searchValue) {
         return productRepo.getProductByName(searchValue);
     }
 }

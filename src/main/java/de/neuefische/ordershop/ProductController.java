@@ -3,6 +3,7 @@ package de.neuefische.ordershop;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -24,7 +25,7 @@ public class ProductController {
     }
 
     @GetMapping("/search")
-    public Product search(@RequestParam String searchValue){
+    public Optional<Product> search(@RequestParam String searchValue){
         return shopService.getProductByName(searchValue);
     }
 }

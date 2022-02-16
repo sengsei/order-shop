@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public class ProductRepo {
@@ -17,12 +18,12 @@ public class ProductRepo {
         products.add(product);
     }
 
-    public Product getProductByName(String searchValue) {
+    public Optional<Product> getProductByName(String searchValue) {
         for (Product product : products){
             if (product.getName().equals(searchValue)){
-                return product;
+                return Optional.of(product);
             }
         }
-        return null;
+        return Optional.empty();
     }
 }
