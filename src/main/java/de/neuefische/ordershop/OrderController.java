@@ -3,6 +3,7 @@ package de.neuefische.ordershop;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/orders")
@@ -19,7 +20,7 @@ public class OrderController {
     }
 
     @GetMapping("{id}")
-    public Order getOrderWithId(@PathVariable String id){
+    public Optional<Order> getOrderWithId(@PathVariable String id){
         return shopService.getOrderWithID(id);
     }
 

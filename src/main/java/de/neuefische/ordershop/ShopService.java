@@ -28,7 +28,7 @@ public class ShopService {
         return orderRepo.getOrders();
     }
 
-    public Order getOrderWithID(String id) {
+    public Optional<Order> getOrderWithID(String id) {
         return orderRepo.getOrderWithId(id);
     }
 
